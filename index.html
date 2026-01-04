@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MavenCars ES – Long-term Car Rental Tenerife</title>
+  <meta name="description" content="MavenCars ES offers long-term car rental in Tenerife. Simple cars, fair prices, no stress." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f766e;
+      --secondary: #14b8a6;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    header p { font-size: 1.2rem; opacity: 0.95; }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+    h2 { font-size: 1.8rem; margin-bottom: 20px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    ul { list-style: none; padding: 0; }
+    ul li { margin-bottom: 10px; }
+    ul li::before { content: "✓ "; color: var(--secondary); font-weight: bold; }
+    .price { font-size: 1.6rem; font-weight: 700; margin: 12px 0; }
+    .muted { color: var(--muted); }
+    .cta {
+      display: inline-block;
+      margin-top: 25px;
+      background: white;
+      color: var(--primary);
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    footer {
+      background: #020617;
+      color: #cbd5f5;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 40px;
+    }
+    .lang { border-top: 1px solid #e2e8f0; margin-top: 80px; padding-top: 60px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>MavenCars ES</h1>
+  <p>Long-term car rental in Tenerife · Simple cars · Fair prices</p>
+  <a class="cta" href="https://wa.me/XXXXXXXXX">Contact us on WhatsApp</a>
+</header>
+
+<section>
+  <h2>🚗 Our cars</h2>
+  <ul>
+    <li>Fiat 500</li>
+    <li>Toyota Yaris</li>
+    <li>Hyundai i10 / i20</li>
+  </ul>
+  <p class="muted">Petrol · Manual · Air conditioning · Ideal for island driving</p>
+</section>
+
+<section>
+  <h2>💰 Pricing</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Long-term rental</h3>
+      <p class="price">520 € / month</p>
+      <p class="muted">1 month</p>
+      <p class="price">490 € / month</p>
+      <p class="muted">2 months</p>
+      <p class="price">450 € / month</p>
+      <p class="muted">3+ months · Minimum rental 30 days</p>
+    </div>
+    <div class="card">
+      <h3>Daily rental</h3>
+      <p class="price">From 30 € / day</p>
+      <p class="muted">Only when cars are not booked long-term</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>⭐ Why MavenCars ES?</h2>
+  <ul>
+    <li>No airport queues</li>
+    <li>No hidden fees</li>
+    <li>Fast WhatsApp communication</li>
+    <li>Perfect for digital nomads & relocations</li>
+    <li>Small private fleet – personal approach</li>
+  </ul>
+</section>
+
+<section>
+  <h2>📅 Availability</h2>
+  <p><strong>Cars available from: [MM / YYYY]</strong></p>
+  <p class="muted">Early reservations welcome</p>
+</section>
+
+<section class="lang">
+  <h2>🇪🇸 MavenCars ES – Alquiler de coches en Tenerife</h2>
+  <p class="muted">Alquiler de coches a largo plazo · Coches sencillos · Precios justos</p>
+
+  <h3>Precios</h3>
+  <ul>
+    <li>1 mes – 520 €</li>
+    <li>2 meses – 490 € / mes</li>
+    <li>3+ meses – 450 € / mes</li>
+    <li>Alquiler diario desde 30 € (según disponibilidad)</li>
+  </ul>
+
+  <h3>Condiciones</h3>
+  <ul>
+    <li>Fianza reembolsable: 500 €</li>
+    <li>Seguro incluido</li>
+    <li>Combustible: lleno → lleno</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2026 MavenCars ES · Tenerife</p>
+</footer>
+
+</body>
+</html>

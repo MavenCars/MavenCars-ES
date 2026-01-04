@@ -76,12 +76,21 @@
 <body>
 
 <header>
-  <h1>MavenCars ES</h1>
-  <p>Long-term car rental in Tenerife · Simple cars · Fair prices</p>
+  <div style="display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:auto;">
+    <div>
+      <h1>MavenCars ES</h1>
+      <p>Long-term car rental in Tenerife · Simple cars · Fair prices</p>
+    </div>
+    <div>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('es')">ES</button>
+      <button onclick="setLang('cs')">CZ</button>
+    </div>
+  </div>
   <a class="cta" href="https://wa.me/XXXXXXXXX">Contact us on WhatsApp</a>
 </header>
 
-<section>
+<section data-lang="en">
   <h2>🚗 Our cars</h2>
   <ul>
     <li>Fiat 500</li>
@@ -91,7 +100,7 @@
   <p class="muted">Petrol · Manual · Air conditioning · Ideal for island driving</p>
 </section>
 
-<section>
+<section data-lang="en">
   <h2>💰 Pricing</h2>
   <div class="cards">
     <div class="card">
@@ -111,7 +120,7 @@
   </div>
 </section>
 
-<section>
+<section data-lang="en">
   <h2>⭐ Why MavenCars ES?</h2>
   <ul>
     <li>No airport queues</li>
@@ -122,35 +131,37 @@
   </ul>
 </section>
 
-<section>
-  <h2>📅 Availability</h2>
-  <p><strong>Cars available from: [MM / YYYY]</strong></p>
-  <p class="muted">Early reservations welcome</p>
+<section data-lang="es" style="display:none">
+  <h2>🚗 Nuestros coches</h2>
+  <ul>
+    <li>Fiat 500</li>
+    <li>Toyota Yaris</li>
+    <li>Hyundai i10 / i20</li>
+  </ul>
+  <p class="muted">Gasolina · Manual · Aire acondicionado</p>
 </section>
 
-<section class="lang">
-  <h2>🇪🇸 MavenCars ES – Alquiler de coches en Tenerife</h2>
-  <p class="muted">Alquiler de coches a largo plazo · Coches sencillos · Precios justos</p>
-
-  <h3>Precios</h3>
+<section data-lang="cs" style="display:none">
+  <h2>🚗 Naše auta</h2>
   <ul>
-    <li>1 mes – 520 €</li>
-    <li>2 meses – 490 € / mes</li>
-    <li>3+ meses – 450 € / mes</li>
-    <li>Alquiler diario desde 30 € (según disponibilidad)</li>
+    <li>Fiat 500</li>
+    <li>Toyota Yaris</li>
+    <li>Hyundai i10 / i20</li>
   </ul>
-
-  <h3>Condiciones</h3>
-  <ul>
-    <li>Fianza reembolsable: 500 €</li>
-    <li>Seguro incluido</li>
-    <li>Combustible: lleno → lleno</li>
-  </ul>
+  <p class="muted">Benzín · Manuál · Klimatizace</p>
 </section>
 
 <footer>
   <p>© 2026 MavenCars ES · Tenerife</p>
 </footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+    });
+  }
+</script>
 
 </body>
 </html>

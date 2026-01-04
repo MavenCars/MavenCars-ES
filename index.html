@@ -27,10 +27,22 @@
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
       padding: 80px 20px;
-      text-align: center;
     }
     header h1 { font-size: 2.5rem; margin-bottom: 10px; }
     header p { font-size: 1.2rem; opacity: 0.95; }
+    .lang-btn {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 6px 12px;
+      margin: 0 4px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
     section {
       max-width: 1000px;
       margin: auto;
@@ -76,18 +88,16 @@
 <body>
 
 <header>
-  <div style="display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:auto;">
-    <div>
-      <h1>MavenCars ES</h1>
-      <p>Long-term car rental in Tenerife · Simple cars · Fair prices</p>
+  <div style="max-width:1000px;margin:auto;text-align:center;">
+    <h1>MavenCars ES</h1>
+    <p>Long-term car rental in Tenerife · Simple cars · Fair prices</p>
+    <div style="margin-top:20px;">
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
     </div>
-    <div>
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('es')">ES</button>
-      <button onclick="setLang('cs')">CZ</button>
-    </div>
+    <a class="cta" href="https://wa.me/XXXXXXXXX">Contact us on WhatsApp</a>
   </div>
-  <a class="cta" href="https://wa.me/XXXXXXXXX">Contact us on WhatsApp</a>
 </header>
 
 <section data-lang="en">
@@ -139,6 +149,22 @@
     <li>Hyundai i10 / i20</li>
   </ul>
   <p class="muted">Gasolina · Manual · Aire acondicionado</p>
+
+  <h2>💰 Precios</h2>
+  <ul>
+    <li>1 mes – 520 €</li>
+    <li>2 meses – 490 € / mes</li>
+    <li>3+ meses – 450 € / mes</li>
+    <li>Alquiler diario desde 30 €</li>
+  </ul>
+
+  <h2>⭐ ¿Por qué MavenCars ES?</h2>
+  <ul>
+    <li>Sin colas en el aeropuerto</li>
+    <li>Sin costes ocultos</li>
+    <li>Comunicación rápida por WhatsApp</li>
+    <li>Ideal para nómadas digitales</li>
+  </ul>
 </section>
 
 <section data-lang="cs" style="display:none">
@@ -149,6 +175,22 @@
     <li>Hyundai i10 / i20</li>
   </ul>
   <p class="muted">Benzín · Manuál · Klimatizace</p>
+
+  <h2>💰 Ceník</h2>
+  <ul>
+    <li>1 měsíc – 520 €</li>
+    <li>2 měsíce – 490 € / měsíc</li>
+    <li>3+ měsíce – 450 € / měsíc</li>
+    <li>Denní pronájem od 30 €</li>
+  </ul>
+
+  <h2>⭐ Proč MavenCars ES?</h2>
+  <ul>
+    <li>Žádné fronty na letišti</li>
+    <li>Žádné skryté poplatky</li>
+    <li>Rychlá komunikace přes WhatsApp</li>
+    <li>Ideální pro digitální nomády</li>
+  </ul>
 </section>
 
 <footer>

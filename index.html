@@ -91,13 +91,32 @@
       padding: 40px 20px;
       margin-top: 40px;
     }
+    .logo {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      font-weight: 600;
+    }
+    .logo-badge {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 4px 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: white;
+      color: var(--primary);
+      border-radius: 999px;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
 
 <header>
   <div style="max-width:1000px;margin:auto;text-align:center;">
-    <h1>MavenCars ES</h1>
+    <div class="logo">Maven<span>Cars</span><span class="logo-badge">ES</span></div>
     <p>Long-term car rental in Tenerife · Simple cars · Fair prices</p>
     <div style="margin-top:20px;">
       <button class="lang-btn" onclick="setLang('en')">EN</button>

@@ -23,6 +23,25 @@
       color: var(--text);
       line-height: 1.6;
     }
+    .top-bar {
+      background: #0b5f58;
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .top-bar-inner {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      padding: 12px 20px;
+    }
+    .top-bar a {
+      color: white;
+      text-decoration: none;
+    }
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
@@ -180,23 +199,26 @@
 </head>
 <body>
 
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span>📍 Tenerife</span>
+    <span>WhatsApp: <a href="https://wa.me/34606269788">+34 606 269 788</a></span>
+  </div>
+</div>
+
 <header>
   <div style="max-width:1000px;margin:auto;text-align:center;">
     <div class="logo">Maven<span>Cars</span><span class="logo-badge">ES</span></div>
     <p data-lang="en" data-display="block">Long-term car rental in Tenerife · Simple cars · Fair prices</p>
     <p data-lang="es" data-display="block" style="display:none">Alquiler de coches de larga duración en Tenerife · Coches sencillos · Precios justos</p>
-    <p data-lang="cs" data-display="block" style="display:none">Dlouhodobý pronájem aut na Tenerife · Jednoduchá auta · Férové ceny</p>
     <div style="margin-top:20px;">
       <button class="lang-btn" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
     </div>
-    <a class="cta" data-lang="en" data-display="inline-block" href="https://wa.me/420XXXXXXXX">Contact us on WhatsApp</a>
-    <a class="cta" data-lang="es" data-display="inline-block" href="https://wa.me/420XXXXXXXX" style="display:none">Solicitar disponibilidad por WhatsApp</a>
-    <a class="cta" data-lang="cs" data-display="inline-block" href="https://wa.me/420XXXXXXXX" style="display:none">Napište nám na WhatsApp</a>
+    <a class="cta" data-lang="en" data-display="inline-block" href="https://wa.me/34606269788">Contact us on WhatsApp</a>
+    <a class="cta" data-lang="es" data-display="inline-block" href="https://wa.me/34606269788" style="display:none">Solicitar disponibilidad por WhatsApp</a>
     <a class="cta secondary" data-lang="en" data-display="inline-block" href="mailto:info@mavencars.es">Email us</a>
     <a class="cta secondary" data-lang="es" data-display="inline-block" href="mailto:info@mavencars.es" style="display:none">Escríbenos por email</a>
-    <a class="cta secondary" data-lang="cs" data-display="inline-block" href="mailto:info@mavencars.es" style="display:none">Napište nám e-mail</a>
     <p style="margin-top:15px;opacity:0.9;">📍 Costa Adeje · Tenerife</p>
     <nav>
       <a href="#" data-scroll="cars">Coches</a>
@@ -206,7 +228,12 @@
       <a href="#" data-scroll="requirements">Requisitos</a>
       <a href="#" data-scroll="contact">Contacto</a>
     </nav>
-    <div class="trust-row">
+    <div class="trust-row" data-lang="en" data-display="grid">
+      <div class="trust-item">✅ Clear contract with no hidden clauses</div>
+      <div class="trust-item">🛡️ Insurance included with reasonable excess</div>
+      <div class="trust-item">🤝 Direct WhatsApp support</div>
+    </div>
+    <div class="trust-row" data-lang="es" data-display="grid" style="display:none">
       <div class="trust-item">✅ Contrato claro y sin letras pequeñas</div>
       <div class="trust-item">🛡️ Seguro incluido con franquicia razonable</div>
       <div class="trust-item">🤝 Atención directa por WhatsApp</div>
@@ -299,7 +326,7 @@
     <h2>📞 Contact</h2>
     <div class="info-grid">
       <div class="info-card contact-card">
-        <span>WhatsApp: <a href="https://wa.me/420XXXXXXXX">+420 XXX XXX XXX</a></span>
+        <span>WhatsApp: <a href="https://wa.me/34606269788">+34 606 269 788</a></span>
         <span>Email: <a href="mailto:info@mavencars.es">info@mavencars.es</a></span>
         <span>Location: Costa Adeje, Tenerife</span>
       </div>
@@ -396,110 +423,13 @@
     <h2>📞 Contacto</h2>
     <div class="info-grid">
       <div class="info-card contact-card">
-        <span>WhatsApp: <a href="https://wa.me/420XXXXXXXX">+420 XXX XXX XXX</a></span>
+        <span>WhatsApp: <a href="https://wa.me/34606269788">+34 606 269 788</a></span>
         <span>Email: <a href="mailto:info@mavencars.es">info@mavencars.es</a></span>
         <span>Ubicación: Costa Adeje, Tenerife</span>
       </div>
       <div class="info-card">
         <h3>Sobre MavenCars ES</h3>
         <p>MavenCars ES es una pequeña empresa de alquiler de coches con base en Costa Adeje, Tenerife. Nos centramos en alquileres a largo plazo para personas que buscan una solución sencilla, justa y sin estrés. Sin turismo masivo ni costes ocultos: solo coches fiables y trato personal.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CZ -->
-<section data-lang="cs" data-display="block" style="display:none">
-  <div class="section-block" data-section="cars">
-    <h2>🚗 Naše auta</h2>
-    <div class="cards">
-      <div class="card"><div class="img-placeholder">Fiat 500</div></div>
-      <div class="card"><div class="img-placeholder">Toyota Yaris</div></div>
-      <div class="card"><div class="img-placeholder">Hyundai i10 / i20</div></div>
-    </div>
-  </div>
-
-  <div class="section-block" data-section="pricing">
-    <h2>💰 Ceník</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Dlouhodobý pronájem</h3>
-        <p class="price">520 € / měsíc</p>
-        <p class="muted">1 měsíc</p>
-        <p class="price">490 € / měsíc</p>
-        <p class="muted">2 měsíce</p>
-        <p class="price">450 € / měsíc</p>
-        <p class="muted">3+ měsíce · Minimálně 30 dní</p>
-      </div>
-      <div class="card">
-        <h3>Denní pronájem</h3>
-        <p class="price">Od 30 € / den</p>
-        <p class="muted">Pouze pokud nejsou auta pronajata dlouhodobě</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-block" data-section="why">
-    <h2>⭐ Proč MavenCars ES?</h2>
-    <ul>
-      <li>Žádné fronty na letišti</li>
-      <li>Žádné skryté poplatky</li>
-      <li>Rychlá komunikace přes WhatsApp</li>
-      <li>Ideální pro digitální nomády a delší pobyty</li>
-      <li>Malá soukromá flotila</li>
-    </ul>
-  </div>
-
-  <div class="section-block" data-section="process">
-    <h2>🧾 Rezervace ve 3 krocích</h2>
-    <div class="step-list">
-      <div class="step">1. Pošlete termín a preferovaný model.</div>
-      <div class="step">2. Potvrdíme dostupnost a pošleme smlouvu.</div>
-      <div class="step">3. Předání v Costa Adeje nebo dohodnutém místě.</div>
-    </div>
-  </div>
-
-  <div class="section-block" data-section="requirements">
-    <h2>✅ Požadavky a co je v ceně</h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>V ceně</h3>
-        <ul>
-          <li>Pojištění se spoluúčastí</li>
-          <li>Asistenční služba</li>
-          <li>Druhý řidič na vyžádání</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>Požadavky</h3>
-        <ul>
-          <li>Řidičský průkaz + pas/OP</li>
-          <li>Vratná kauce: 500 €</li>
-          <li>Minimální věk: 23 let</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>Transparentnost</h3>
-        <ul>
-          <li>Srozumitelná smlouva a faktura</li>
-          <li>Bez front na letišti</li>
-          <li>Lokální podpora na Tenerife</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-block" data-section="contact">
-    <h2>📞 Kontakt</h2>
-    <div class="info-grid">
-      <div class="info-card contact-card">
-        <span>WhatsApp: <a href="https://wa.me/420XXXXXXXX">+420 XXX XXX XXX</a></span>
-        <span>Email: <a href="mailto:info@mavencars.es">info@mavencars.es</a></span>
-        <span>Lokalita: Costa Adeje, Tenerife</span>
-      </div>
-      <div class="info-card">
-        <h3>O MavenCars ES</h3>
-        <p>MavenCars ES je malá soukromá půjčovna aut se sídlem v Costa Adeje na Tenerife. Zaměřujeme se na dlouhodobé pronájmy pro lidi, kteří chtějí jednoduché, férové a bezstarostné řešení. Žádný masový turismus ani skryté poplatky – jen spolehlivá auta a osobní přístup.</p>
       </div>
     </div>
   </div>
@@ -515,12 +445,12 @@
 
 <script>
   const navLabels = {
-    cars: { en: 'Cars', es: 'Coches', cs: 'Auta' },
-    pricing: { en: 'Pricing', es: 'Precios', cs: 'Ceník' },
-    why: { en: 'Why us', es: 'Confianza', cs: 'Proč my' },
-    process: { en: 'Booking', es: 'Reserva', cs: 'Rezervace' },
-    requirements: { en: 'Requirements', es: 'Requisitos', cs: 'Požadavky' },
-    contact: { en: 'Contact', es: 'Contacto', cs: 'Kontakt' }
+    cars: { en: 'Cars', es: 'Coches' },
+    pricing: { en: 'Pricing', es: 'Precios' },
+    why: { en: 'Why us', es: 'Confianza' },
+    process: { en: 'Booking', es: 'Reserva' },
+    requirements: { en: 'Requirements', es: 'Requisitos' },
+    contact: { en: 'Contact', es: 'Contacto' }
   };
   let currentLang = 'es';
 

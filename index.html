@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MavenCars ES – Long-term Car Rental Tenerife</title>
-  <meta name="description" content="MavenCars ES offers long-term car rental in Tenerife. Simple cars, fair prices, no stress." />
+  <title>MavenCars ES – Alquiler de coches de larga duración en Tenerife</title>
+  <meta name="description" content="MavenCars ES ofrece alquiler de coches de larga duración en Tenerife. Coches sencillos, precios justos y atención cercana." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -23,13 +23,48 @@
       color: var(--text);
       line-height: 1.6;
     }
+    .top-bar {
+      background: #0b5f58;
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .top-bar-inner {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      padding: 12px 20px;
+    }
+    .top-bar a {
+      color: white;
+      text-decoration: none;
+    }
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      padding: 80px 20px;
+      padding: 80px 20px 60px;
     }
     header h1 { font-size: 2.5rem; margin-bottom: 10px; }
     header p { font-size: 1.2rem; opacity: 0.95; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      background: rgba(255,255,255,0.18);
+      padding: 8px 16px;
+      border-radius: 999px;
+    }
+    nav a:hover { background: rgba(255,255,255,0.28); }
     .lang-btn {
       background: rgba(255,255,255,0.15);
       border: 1px solid rgba(255,255,255,0.3);
@@ -58,6 +93,7 @@
       padding: 30px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
+    .card h3 { margin-top: 0; }
     .img-placeholder{
       height:160px;
       border-radius:10px;
@@ -84,6 +120,55 @@
       font-weight: 700;
       text-decoration: none;
     }
+    .cta.secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.6);
+      margin-left: 12px;
+    }
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .trust-item {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 14px;
+      padding: 16px 18px;
+      font-weight: 600;
+    }
+    .section-block { margin-top: 40px; }
+    .step-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .step {
+      background: #f1f5f9;
+      padding: 20px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .info-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 12px 24px rgba(15,23,42,0.08);
+    }
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-weight: 600;
+    }
+    .contact-card a { color: var(--primary); text-decoration: none; }
     footer {
       background: #020617;
       color: #cbd5f5;
@@ -114,172 +199,282 @@
 </head>
 <body>
 
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span>📍 Tenerife</span>
+    <span>WhatsApp: <a href="https://wa.me/34606269788">+34 606 269 788</a></span>
+  </div>
+</div>
+
 <header>
   <div style="max-width:1000px;margin:auto;text-align:center;">
     <div class="logo">Maven<span>Cars</span><span class="logo-badge">ES</span></div>
-    <p>Long-term car rental in Tenerife · Simple cars · Fair prices</p>
+    <p data-lang="en" data-display="block">Long-term car rental in Tenerife · Simple cars · Fair prices</p>
+    <p data-lang="es" data-display="block" style="display:none">Alquiler de coches de larga duración en Tenerife · Coches sencillos · Precios justos</p>
     <div style="margin-top:20px;">
       <button class="lang-btn" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
     </div>
-    <a class="cta" href="https://wa.me/420XXXXXXXX">Contact us on WhatsApp</a>
+    <a class="cta" data-lang="en" data-display="inline-block" href="https://wa.me/34606269788">Contact us on WhatsApp</a>
+    <a class="cta" data-lang="es" data-display="inline-block" href="https://wa.me/34606269788" style="display:none">Solicitar disponibilidad por WhatsApp</a>
+    <a class="cta secondary" data-lang="en" data-display="inline-block" href="mailto:info@mavencars.es">Email us</a>
+    <a class="cta secondary" data-lang="es" data-display="inline-block" href="mailto:info@mavencars.es" style="display:none">Escríbenos por email</a>
     <p style="margin-top:15px;opacity:0.9;">📍 Costa Adeje · Tenerife</p>
+    <nav>
+      <a href="#" data-scroll="cars">Coches</a>
+      <a href="#" data-scroll="pricing">Precios</a>
+      <a href="#" data-scroll="why">Confianza</a>
+      <a href="#" data-scroll="process">Reserva</a>
+      <a href="#" data-scroll="requirements">Requisitos</a>
+      <a href="#" data-scroll="contact">Contacto</a>
+    </nav>
+    <div class="trust-row">
+      <div class="trust-item">✅ Contrato claro y sin letras pequeñas</div>
+      <div class="trust-item">🛡️ Seguro incluido con franquicia razonable</div>
+      <div class="trust-item">🤝 Atención directa por WhatsApp</div>
+    </div>
   </div>
 </header>
 
 <!-- EN -->
-<section data-lang="en">
-  <h2>🚗 Our cars</h2>
-  <div class="cards">
-    <div class="card"><div class="img-placeholder">Fiat 500</div></div>
-    <div class="card"><div class="img-placeholder">Toyota Yaris</div></div>
-    <div class="card"><div class="img-placeholder">Hyundai i10 / i20</div></div>
-  </div>
-
-  <h2 style="margin-top:60px">💰 Pricing</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Long-term rental</h3>
-      <p class="price">520 € / month</p>
-      <p class="muted">1 month</p>
-      <p class="price">490 € / month</p>
-      <p class="muted">2 months</p>
-      <p class="price">450 € / month</p>
-      <p class="muted">3+ months · Minimum 30 days</p>
-    </div>
-    <div class="card">
-      <h3>Daily rental</h3>
-      <p class="price">From 30 € / day</p>
-      <p class="muted">Only when cars are not booked long-term</p>
+<section data-lang="en" data-display="block">
+  <div class="section-block" data-section="cars">
+    <h2>🚗 Our cars</h2>
+    <div class="cards">
+      <div class="card"><div class="img-placeholder">Fiat 500</div></div>
+      <div class="card"><div class="img-placeholder">Toyota Yaris</div></div>
+      <div class="card"><div class="img-placeholder">Hyundai i10 / i20</div></div>
     </div>
   </div>
 
-  <h2 style="margin-top:60px">⭐ Why MavenCars ES?</h2>
-  <ul>
-    <li>No airport queues</li>
-    <li>No hidden fees</li>
-    <li>Fast WhatsApp communication</li>
-    <li>Perfect for digital nomads & relocations</li>
-    <li>Small private fleet – personal approach</li>
-  </ul>
-  <h2 style="margin-top:60px">👋 About MavenCars ES</h2>
-  <p>MavenCars ES is a small private car rental based in Costa Adeje, Tenerife. We focus mainly on long-term rentals for people who want a simple, fair and stress-free solution. No mass tourism, no hidden fees – just reliable cars and a personal approach.</p>
+  <div class="section-block" data-section="pricing">
+    <h2>💰 Pricing</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Long-term rental</h3>
+        <p class="price">520 € / month</p>
+        <p class="muted">1 month</p>
+        <p class="price">490 € / month</p>
+        <p class="muted">2 months</p>
+        <p class="price">450 € / month</p>
+        <p class="muted">3+ months · Minimum 30 days</p>
+      </div>
+      <div class="card">
+        <h3>Daily rental</h3>
+        <p class="price">From 30 € / day</p>
+        <p class="muted">Only when cars are not booked long-term</p>
+      </div>
+    </div>
+  </div>
 
-  <h2 style="margin-top:60px">❓ FAQ</h2>
-  <ul>
-    <li><strong>Is insurance included?</strong><br>Yes, insurance is included with a reasonable excess.</li>
-    <li><strong>How much is the deposit?</strong><br>The refundable deposit is 500 €.</li>
-    <li><strong>Who is long-term rental ideal for?</strong><br>Digital nomads, remote workers and people relocating to Tenerife.</li>
-  </ul>
+  <div class="section-block" data-section="why">
+    <h2>⭐ Why MavenCars ES?</h2>
+    <ul>
+      <li>No airport queues</li>
+      <li>No hidden fees</li>
+      <li>Fast WhatsApp communication</li>
+      <li>Perfect for digital nomads & relocations</li>
+      <li>Small private fleet – personal approach</li>
+    </ul>
+  </div>
+
+  <div class="section-block" data-section="process">
+    <h2>🧾 Booking in 3 steps</h2>
+    <div class="step-list">
+      <div class="step">1. Tell us your dates and preferred model.</div>
+      <div class="step">2. We confirm availability & send the contract.</div>
+      <div class="step">3. Delivery in Costa Adeje or meeting point.</div>
+    </div>
+  </div>
+
+  <div class="section-block" data-section="requirements">
+    <h2>✅ Requirements & what is included</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Included</h3>
+        <ul>
+          <li>Insurance with reasonable excess</li>
+          <li>Roadside assistance</li>
+          <li>Second driver on request</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Requirements</h3>
+        <ul>
+          <li>Driving license + ID/passport</li>
+          <li>Refundable deposit: 500 €</li>
+          <li>Minimum age: 23 years</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Transparency</h3>
+        <ul>
+          <li>Clear contract & invoice</li>
+          <li>No airport queues</li>
+          <li>Local support in Tenerife</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block" data-section="contact">
+    <h2>📞 Contact</h2>
+    <div class="info-grid">
+      <div class="info-card contact-card">
+        <span>WhatsApp: <a href="https://wa.me/34606269788">+34 606 269 788</a></span>
+        <span>Email: <a href="mailto:info@mavencars.es">info@mavencars.es</a></span>
+        <span>Location: Costa Adeje, Tenerife</span>
+      </div>
+      <div class="info-card">
+        <h3>About MavenCars ES</h3>
+        <p>MavenCars ES is a small private car rental based in Costa Adeje, Tenerife. We focus mainly on long-term rentals for people who want a simple, fair and stress-free solution. No mass tourism, no hidden fees – just reliable cars and a personal approach.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ES -->
-<section data-lang="es" style="display:none">
-  <h2>🚗 Nuestros coches</h2>
-  <div class="cards">
-    <div class="card"><div class="img-placeholder">Fiat 500</div></div>
-    <div class="card"><div class="img-placeholder">Toyota Yaris</div></div>
-    <div class="card"><div class="img-placeholder">Hyundai i10 / i20</div></div>
-  </div>
-
-  <h2 style="margin-top:60px">💰 Precios</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Alquiler a largo plazo</h3>
-      <p class="price">520 € / mes</p>
-      <p class="muted">1 mes</p>
-      <p class="price">490 € / mes</p>
-      <p class="muted">2 meses</p>
-      <p class="price">450 € / mes</p>
-      <p class="muted">3+ meses · Mínimo 30 días</p>
-    </div>
-    <div class="card">
-      <h3>Alquiler diario</h3>
-      <p class="price">Desde 30 € / día</p>
-      <p class="muted">Solo si los coches no están alquilados a largo plazo</p>
+<section data-lang="es" data-display="block" style="display:none">
+  <div class="section-block" data-section="cars">
+    <h2>🚗 Nuestros coches</h2>
+    <div class="cards">
+      <div class="card"><div class="img-placeholder">Fiat 500</div></div>
+      <div class="card"><div class="img-placeholder">Toyota Yaris</div></div>
+      <div class="card"><div class="img-placeholder">Hyundai i10 / i20</div></div>
     </div>
   </div>
 
-  <h2 style="margin-top:60px">⭐ ¿Por qué MavenCars ES?</h2>
-  <ul>
-    <li>Sin colas en el aeropuerto</li>
-    <li>Sin costes ocultos</li>
-    <li>Comunicación rápida por WhatsApp</li>
-    <li>Ideal para nómadas digitales</li>
-    <li>Flota privada y trato personal</li>
-  </ul>
-  <h2 style="margin-top:60px">👋 Sobre MavenCars ES</h2>
-  <p>MavenCars ES es una pequeña empresa de alquiler de coches con base en Costa Adeje, Tenerife. Nos centramos principalmente en alquileres a largo plazo para personas que buscan una solución sencilla, justa y sin estrés. Sin turismo masivo ni costes ocultos – solo coches fiables y trato personal.</p>
-
-  <h2 style="margin-top:60px">❓ Preguntas frecuentes</h2>
-  <ul>
-    <li><strong>¿El seguro está incluido?</strong><br>Sí, el seguro está incluido con una franquicia razonable.</li>
-    <li><strong>¿Cuál es la fianza?</strong><br>La fianza reembolsable es de 500 €.</li>
-    <li><strong>¿Para quién es ideal el alquiler a largo plazo?</strong><br>Nómadas digitales, trabajadores remotos y personas que se mudan a Tenerife.</li>
-  </ul>
-</section>
-
-<!-- CZ -->
-<section data-lang="cs" style="display:none">
-  <h2>🚗 Naše auta</h2>
-  <div class="cards">
-    <div class="card"><div class="img-placeholder">Fiat 500</div></div>
-    <div class="card"><div class="img-placeholder">Toyota Yaris</div></div>
-    <div class="card"><div class="img-placeholder">Hyundai i10 / i20</div></div>
-  </div>
-
-  <h2 style="margin-top:60px">💰 Ceník</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Dlouhodobý pronájem</h3>
-      <p class="price">520 € / měsíc</p>
-      <p class="muted">1 měsíc</p>
-      <p class="price">490 € / měsíc</p>
-      <p class="muted">2 měsíce</p>
-      <p class="price">450 € / měsíc</p>
-      <p class="muted">3+ měsíce · Minimálně 30 dní</p>
-    </div>
-    <div class="card">
-      <h3>Denní pronájem</h3>
-      <p class="price">Od 30 € / den</p>
-      <p class="muted">Pouze pokud nejsou auta pronajata dlouhodobě</p>
+  <div class="section-block" data-section="pricing">
+    <h2>💰 Precios</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Alquiler a largo plazo</h3>
+        <p class="price">520 € / mes</p>
+        <p class="muted">1 mes</p>
+        <p class="price">490 € / mes</p>
+        <p class="muted">2 meses</p>
+        <p class="price">450 € / mes</p>
+        <p class="muted">3+ meses · Mínimo 30 días</p>
+      </div>
+      <div class="card">
+        <h3>Alquiler diario</h3>
+        <p class="price">Desde 30 € / día</p>
+        <p class="muted">Solo si los coches no están alquilados a largo plazo</p>
+      </div>
     </div>
   </div>
 
-  <h2 style="margin-top:60px">⭐ Proč MavenCars ES?</h2>
-  <ul>
-    <li>Žádné fronty na letišti</li>
-    <li>Žádné skryté poplatky</li>
-    <li>Rychlá komunikace přes WhatsApp</li>
-    <li>Ideální pro digitální nomády</li>
-    <li>Malá soukromá flotila</li>
-  </ul>
-  <h2 style="margin-top:60px">👋 O MavenCars ES</h2>
-  <p>MavenCars ES je malá soukromá půjčovna aut se sídlem v Costa Adeje na Tenerife. Zaměřujeme se hlavně na dlouhodobé pronájmy pro lidi, kteří chtějí jednoduché, férové a bezstarostné řešení. Žádný masový turismus ani skryté poplatky – jen spolehlivá auta a osobní přístup.</p>
+  <div class="section-block" data-section="why">
+    <h2>⭐ ¿Por qué confiar en MavenCars ES?</h2>
+    <ul>
+      <li>Sin colas en el aeropuerto</li>
+      <li>Sin costes ocultos</li>
+      <li>Comunicación rápida por WhatsApp</li>
+      <li>Ideal para nómadas digitales y estancias largas</li>
+      <li>Flota privada y trato personal</li>
+    </ul>
+  </div>
 
-  <h2 style="margin-top:60px">❓ Časté dotazy</h2>
-  <ul>
-    <li><strong>Je v ceně pojištění?</strong><br>Ano, pojištění je v ceně se spoluúčastí.</li>
-    <li><strong>Jak vysoká je kauce?</strong><br>Vratná kauce je 500 €.</li>
-    <li><strong>Pro koho je dlouhodobý pronájem vhodný?</strong><br>Digitální nomádi, práce na dálku a lidé stěhující se na Tenerife.</li>
-  </ul>
+  <div class="section-block" data-section="process">
+    <h2>🧾 Reserva en 3 pasos</h2>
+    <div class="step-list">
+      <div class="step">1. Cuéntanos fechas y modelo preferido.</div>
+      <div class="step">2. Confirmamos disponibilidad y enviamos el contrato.</div>
+      <div class="step">3. Entrega en Costa Adeje o punto acordado.</div>
+    </div>
+  </div>
+
+  <div class="section-block" data-section="requirements">
+    <h2>✅ Requisitos y qué incluye</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Incluye</h3>
+        <ul>
+          <li>Seguro con franquicia razonable</li>
+          <li>Asistencia en carretera</li>
+          <li>Segundo conductor bajo petición</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Requisitos</h3>
+        <ul>
+          <li>Carnet de conducir + DNI/pasaporte</li>
+          <li>Fianza reembolsable: 500 €</li>
+          <li>Edad mínima: 23 años</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Transparencia</h3>
+        <ul>
+          <li>Contrato claro y factura</li>
+          <li>Sin colas de aeropuerto</li>
+          <li>Soporte local en Tenerife</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block" data-section="contact">
+    <h2>📞 Contacto</h2>
+    <div class="info-grid">
+      <div class="info-card contact-card">
+        <span>WhatsApp: <a href="https://wa.me/34606269788">+34 606 269 788</a></span>
+        <span>Email: <a href="mailto:info@mavencars.es">info@mavencars.es</a></span>
+        <span>Ubicación: Costa Adeje, Tenerife</span>
+      </div>
+      <div class="info-card">
+        <h3>Sobre MavenCars ES</h3>
+        <p>MavenCars ES es una pequeña empresa de alquiler de coches con base en Costa Adeje, Tenerife. Nos centramos en alquileres a largo plazo para personas que buscan una solución sencilla, justa y sin estrés. Sin turismo masivo ni costes ocultos: solo coches fiables y trato personal.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
   <p><strong>MavenCars ES</strong></p>
   <p>📍 Costa Adeje, Tenerife</p>
-  <p>📞 Phone / WhatsApp: +420 XXX XXX XXX</p>
+  <p>WhatsApp: +34 606 269 788</p>
   <p>✉️ Email: info@mavencars.es</p>
   <p style="margin-top:15px;opacity:0.7;">© 2026 MavenCars ES</p>
 </footer>
 
 <script>
+  const navLabels = {
+    cars: { en: 'Cars', es: 'Coches' },
+    pricing: { en: 'Pricing', es: 'Precios' },
+    why: { en: 'Why us', es: 'Confianza' },
+    process: { en: 'Booking', es: 'Reserva' },
+    requirements: { en: 'Requirements', es: 'Requisitos' },
+    contact: { en: 'Contact', es: 'Contacto' }
+  };
+  let currentLang = 'es';
+
   function setLang(lang) {
     document.querySelectorAll('[data-lang]').forEach(el => {
-      el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+      const display = el.dataset.display || 'block';
+      el.style.display = el.getAttribute('data-lang') === lang ? display : 'none';
+    });
+    document.documentElement.lang = lang;
+    currentLang = lang;
+    document.querySelectorAll('nav a[data-scroll]').forEach(link => {
+      const labels = navLabels[link.dataset.scroll];
+      if (labels) {
+        link.textContent = labels[lang] || link.textContent;
+      }
     });
   }
+
+  document.querySelectorAll('nav a[data-scroll]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const target = document.querySelector(`[data-lang="${currentLang}"] [data-section="${link.dataset.scroll}"]`);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  setLang('es');
 </script>
 
 </body>
